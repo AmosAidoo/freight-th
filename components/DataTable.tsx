@@ -202,7 +202,6 @@ const DataTable = ({ rows, setRows }: DataTableProps) => {
 		} else {
 			row[field] = value;
 		}
-		row._originalData[field] = row[field];
 
 		const revalidated = validateRow(row as Shipment, rowIndex);
 		updatedRows[rowIndex] = revalidated;
