@@ -8,7 +8,7 @@ const ProcessingSummary = ({ stats }: ProcessingSummaryProps) => {
 	return (
 		<div className="mx-4 sm:mx-6 mt-6 bg-white border border-gray-200 rounded-xl p-6 shadow-md">
 			<h2 className="text-xl font-bold text-gray-900 mb-4 border-b pb-2">Processing Summary</h2>
-			<div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+			<div className="grid sm:grid-cols-2 md:grid-cols-5 gap-4">
 				<div className="rounded-xl p-4 shadow">
 					<div className="text-3xl font-extrabold">{stats.totalRows}</div>
 					<div className="text-sm text-gray-600">Total Shipments</div>
@@ -21,7 +21,7 @@ const ProcessingSummary = ({ stats }: ProcessingSummaryProps) => {
 					<div className="text-3xl font-extrabold">{stats.avgEmissions.toFixed(1)} kg</div>
 					<div className="text-sm text-gray-600">Avg per Shipment</div>
 				</div>
-				<div className="col-span-2 md:col-span-2 rounded-xl p-4 shadow">
+				<div className="md:col-span-2 rounded-xl p-4 shadow">
 					<h3 className="font-semibold text-gray-700 mb-2">Emissions Breakdown by Mode</h3>
 					<div className="flex flex-wrap gap-4">
 						{Object.entries(stats.emissionsByMode).map(([mode, emissions]) => (
@@ -33,10 +33,10 @@ const ProcessingSummary = ({ stats }: ProcessingSummaryProps) => {
 					</div>
 				</div>
 				{stats.topRoute && (
-					<div className="col-span-2 rounded-xl p-4 shadow">
+					<div className="sm:col-span-2 rounded-xl p-4 shadow">
 						<h3 className="font-semibold text-gray-700 mb-2">Top Route</h3>
 						<div>
-							<div className="text-sm">{stats.topRoute.route}</div>
+							<div className="text-sm text-gray-600">{stats.topRoute.route}</div>
 							<div className="text-lg font-semibold">
 								{stats.topRoute.emissions.toFixed(2)} kg CO₂e
 							</div>
