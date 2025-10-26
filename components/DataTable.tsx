@@ -140,7 +140,7 @@ const DataTable = ({ rows, setRows }: DataTableProps) => {
 			cell: (info) => {
 				const val = info.getValue();
 				return val
-					? <span className="text-green-800">{val.toFixed(2)} kg</span>
+					? <span>{val.toFixed(2)} kg</span>
 					: "—";
 			},
 			enableSorting: false,
