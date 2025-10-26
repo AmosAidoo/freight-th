@@ -92,20 +92,4 @@ describe("validateRow", () => {
 			}
 		});
 	});
-
-	it("should preserve original data for debugging", () => {
-		const shipment = {
-			shipment_id: "SH-001",
-			origin_address: "  NYC  ",
-			destination_address: "LA",
-			mode: "AIR",
-			weight_kg: 500
-		};
-
-		const result = validateRow(shipment as Shipment, 5);
-
-		expect(result._originalData).toEqual(shipment);
-		expect(result.origin_address).toBe("NYC");
-		expect(result.mode).toBe("air");
-	});
 });

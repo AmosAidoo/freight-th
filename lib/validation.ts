@@ -1,4 +1,4 @@
-import { RawData, Shipment, ShipmentRow } from "@/types";
+import { RawData, Shipment, ShipmentMode, ShipmentRow } from "@/types";
 import { VALID_MODES } from "./constants";
 
 export const validateRow = (row: Shipment, index: number): ShipmentRow => {
@@ -27,7 +27,7 @@ export const validateRow = (row: Shipment, index: number): ShipmentRow => {
 	if (!VALID_MODES.includes(mode)) {
 		errors.mode = `Must be one of: ${VALID_MODES.join(", ")}.`;
 	}
-	data.mode = mode as "air" | "sea" | "road" | "rail";
+	data.mode = mode as ShipmentMode;
 
 	const weight = parseFloat(`${row.weight_kg}`);
 	if (isNaN(weight) || weight <= 0) {
@@ -40,6 +40,5 @@ export const validateRow = (row: Shipment, index: number): ShipmentRow => {
 		_rowIndex: index,
 		_status: "pending",
 		_validationErrors: Object.keys(errors).length > 0 ? errors : undefined,
-		_originalData: row as unknown as RawData,
 	};
 };
