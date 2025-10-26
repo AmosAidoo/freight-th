@@ -35,7 +35,9 @@ export default function Page() {
         const uploadedHeader = mapping[field.key];
         mappedRow[field.key] = originalRow[uploadedHeader];
       });
-      return validateRow(mappedRow as unknown as Shipment, index);
+      const row = validateRow(mappedRow as unknown as Shipment, index);
+      row._originalData = originalRow;
+      return row;
     });
 
     setIsProcessing(false);
