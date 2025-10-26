@@ -14,7 +14,7 @@ export interface ShipmentRow extends Partial<Shipment> {
 	_emissions?: number;
 	_error?: string;
 	_validationErrors?: Record<string, string>;
-	_originalData: RawData;
+	_originalData?: RawData;
 }
 
 export interface ColumnMapping {
