@@ -19,6 +19,12 @@ A simple app that takes a CSV containing freight shipments and processes them th
 - Export of results.
 
 ## Running the project
+### Environmental Variables
+```
+CLIMATIQ_API_KEY=
+```
+
+## Running
 You should have Node.js v20.9 or above. 
 After cloning the project, and entering the directory, just run:
 ```bash
