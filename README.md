@@ -41,6 +41,7 @@ Run `npm run test` to run the included tests.
 	- `CsvUpload`: The first component rendered for uploading the CSV file.
 	- `DataOnboardingStep`: The second component rendered after the CSV file has been rendered successfully.
 	- `NavBar`, `ValidationSummary`, `ProcessingSummary` and `DataTable`: These together form the Results Dashboard.
+- For state management, `useState` was enough for the scope of this project. I would consider something like `zustand` for more complex use cases.
 - I kept the main Page component very lean by moving shipment processing and statistics logics into custom hooks and creating resuable components inside `/components`. Utility functions for csv parsing, validation and exports are inside the `/lib` directory. It makes it easier to test such functionalities in isolation and resuse them across the entire project.
 - The freight API call is done inside Route Handler, which is completely server side. It keeps things clean and something like the API key used in the project will never have to be exposed to the client.
 - I used Papa Parse because CSV parsing is complex and it makes sense to use an already existing robust solution given the time.
